@@ -29,7 +29,4 @@ urlpatterns = [
     path('report/', views.report),
     path('contact/', views.contact),
     path('about/', views.about),
-
-
-
 ]
