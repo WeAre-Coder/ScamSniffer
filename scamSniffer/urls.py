@@ -19,8 +19,10 @@ from django.urls import path
 from linkScanner import views
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home),
     path('learn/', views.learn),
     path('report/', views.report),
 
