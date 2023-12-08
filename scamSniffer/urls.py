@@ -27,6 +27,7 @@ urlpatterns = [
     path('',views.home),
     path('learn/', views.learn),
     path('report/', views.report),
+    path('contact/', views.contact),
 
 
 

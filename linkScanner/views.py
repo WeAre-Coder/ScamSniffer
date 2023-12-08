@@ -6,7 +6,10 @@ def home(request):
     return render(request, 'linkScanner/index.html')
 
 def learn(request):
-    return HttpResponse('LEARN MORE')
+    return render(request, 'linkScanner/learn.html')
 
 def report(request):
-    return HttpResponse('Report if something wrong')
+    return render(request, 'linkScanner/report.html')
+
+def contact(request):
+    return render(request, 'linkScanner/contact.html')
