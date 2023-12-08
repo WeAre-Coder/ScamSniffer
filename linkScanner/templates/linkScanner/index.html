@@ -1,40 +1,11 @@
-<!-- {% load static %}
-<img src="{% static 'linkScanner/logo-removebg-preview.png' % }"
-alt = "My image"> -->
+{% extends 'linkScanner/base.html' %}
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhishSniffer</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="static/linkScanner/style.css">
-
-</head>
-<body>
-    <section id="header">
-        <a href="#"><img src="static/linkScanner/mainlogo.png" alt="logo" width="300px" height="150px"></a>
-
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="learn">Learn</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="report">Report</a></li>
-                <li><a href="contact">Contact</a></li>
-                
-            </ul>
-        </div>
-    </section>   
-        <section id="main-content">
-            <div class="link-scan">
-                <input type="text" id="link-input" placeholder="Paste link here">
-                <button id="scan-button">Scan</button>
-            </div>
-        </section>
-        
-    
-</body>
-</html>
+{% block body %}
+</section>   
+<section id="main-content">
+    <div class="link-scan">
+        <input type="text" id="link-input" placeholder="Paste link here">
+        <button id="scan-button">Scan</button>
+    </div>
+</section>
+{% endblock %}
