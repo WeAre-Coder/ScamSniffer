@@ -104,8 +104,16 @@ html {
     width: 60%;
     max-width: 600px;
     margin: auto;
-
+    transition: box-shadow 0.3s ease;
+    
 }
+
+.link-scan:hover{
+    box-shadow: 0 0 20px 5px rgba(5, 181, 181, 0.6);
+}
+
+
+
 
 
 #link-input {
@@ -134,4 +142,3 @@ html {
 #scan-button:hover {
     background-color: #161329;
 }
-
