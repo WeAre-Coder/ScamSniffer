@@ -4,7 +4,7 @@ from django.db import models
 
 class Link(models.Model):
 
-    def __str__(self):
+    def __str__(self):  #to display the link name directly instead of "link(1)"
         return self.link
 
     link = models.CharField(max_length=5000)

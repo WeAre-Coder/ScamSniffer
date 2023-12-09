@@ -9,9 +9,9 @@ def home(request):
         link = request.POST.get('link','')
         status = request.POST.get('status','')
 
-        link = Link(link=link, status=status)
+        link = Link(link=link, status=status) #creating link object so that it gets saved in the database
         link.save()
-        return redirect('/')
+        return redirect('/result')
     return render(request,'linkScanner/index.html',{'link_list':link_list})
 
 def learn(request):
@@ -25,3 +25,6 @@ def contact(request):
 
 def about(request):
     return render(request, 'linkScanner/about.html')
+
+def result(request):
+    return render(request,'linkScanner/result.html')
