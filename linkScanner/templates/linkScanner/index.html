@@ -10,11 +10,34 @@
 
     }
 </style>
+<script>
+    // JavaScript to control the typewriter effect
+    const text = "Because Trusting the Internet is so 2012";
+  
+    function typeWriterEffect() {
+      let i = 0;
+      const speed = 50; // Adjust the speed (milliseconds per character)
+  
+      function type() {
+        if (i < text.length) {
+          document.getElementById("typewriter-text").textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+  
+      type();
+    }
+  
+    // Start the typewriter effect when the page loads
+    document.addEventListener("DOMContentLoaded", typeWriterEffect);
+  </script>
+  
 
 <section id="main-content" class="center-content">
     <div class="text-content">
-        <h1 class="welcome">Welcome</h1>
-        <p>hello use this bla blaaa</p>
+        <h3 class="welcome">hold the truth...</h3>
+        <p id="typewriter-text"> </p>
 
     </div>
     <div class="link-scan">
