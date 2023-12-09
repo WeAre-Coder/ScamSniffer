@@ -20,7 +20,7 @@
                 <li><a class="{% if request.path == '/' %}active{% endif %}" href="/">Home</a></li>
                 <li><a class="{% if request.path == '/learn/' %}active{% endif %}" href="/learn">Learn</a></li>
                 <li><a class="{% if request.path == '/about/' %}active{% endif %}" href="/about">About</a></li>
-                <li><a class="{% if request.path == '/report/' %}active{% endif %}" href="/report">Report</a></li>
+                <li><a class="{% if request.path == '/report/' %}active{% endif %}" href="/report">Report Links</a></li>
                 <li><a class="{% if request.path == '/contact/' %}active{% endif %}" href="/contact">Contact</a></li>
             </ul>
         </div>
@@ -28,8 +28,10 @@
     {% block body %}
 
     {% endblock %}
-
-
+    
 </body>
+
+
+
 
 </html>
