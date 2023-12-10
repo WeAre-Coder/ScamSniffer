@@ -12,7 +12,7 @@
 </style>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<div class="container-fluid"  >
+<div class="container-fluid" style="color:white;">
   <div class="row">
       <div class="col-lg-12">
           <div class="banner" align="center" >
@@ -26,7 +26,7 @@
 <div class="row" style="justify-content:center">
   <div class="col-lg-6" >
       <h4><center>Finding something wrong?</center></h4>
-      <form class="p-3 shadow" method="POST">
+      <form class="p-3 shadow" method="POST" style="background-color: #3bb2c03d;">
           {% csrf_token %}
           <div class="form-group">
             <form>
@@ -44,7 +44,7 @@
               </div>
               <fieldset class="row mb-3">
                 <legend class="col-form-label col-sm-2 pt-0">Level</legend>
-                <div class="col-sm-10">
+                <div class="col-sm-10" style="font-weight: bold;">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                     <label class="form-check-label" for="gridRadios1">
@@ -75,7 +75,7 @@
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Let me Know</button>
+              <center><button type="submit" class="btn btn-primary">Let me Know</button></center>
             </form>
               
           </div>
