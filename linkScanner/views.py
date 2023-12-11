@@ -1,17 +1,18 @@
 from django.shortcuts import render, redirect
 from .models import Link
 from .forms import LinkForm
+from linkScanner import scanner
 
 # Create your views here.
 def home(request):
     link_list = Link.objects.all()
     if request.method == 'POST':
-        link = request.POST.get('link','')
-        status = request.POST.get('status','')
-
+        link = request.POST.get('link','')        
+        result = scanner.check(str(link))
+        status = request.POST.get('status',result)
         link = Link(link=link, status=status) #creating link object so that it gets saved in the database
         link.save()
-        return redirect('/result')
+        return render(request,'linkScanner/result.html',{'result':result})
     return render(request,'linkScanner/index.html',{'link_list':link_list})
 
 def learn(request):

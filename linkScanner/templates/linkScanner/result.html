@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFE</title>
-    <h>SAFE</h>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'linkScanner/base.html' %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/linkScanner/a1.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
+</style>
+<section id="another-section">
+    <div class="content">
+        <h2 id="display-result"></h2><br>
+    </div>
+</section>
+
+{% if result == 'Good' %}
+<style>
+    .content {
+        background-color: #00ff0061;
+    }
+
+    .content:hover {
+        box-shadow: 0 0 20px 5px rgb(46 131 38 / 60%);
+    }
+</style>
+<script>
+    document.getElementById('display-result').innerHTML = "Safe Site to use"
+</script>
+{% else %}
+<style>
+    .content {
+        background-color: #f7373778;
+    }
+
+    .content:hover {
+        box-shadow: 0 0 20px 5px rgb(255 0 0 / 60%);
+    }
+</style>
+<script>
+    document.getElementById('display-result').innerHTML = "Unsafe Site to use"
+</script>
+{% endif %}
+{% endblock body %}
