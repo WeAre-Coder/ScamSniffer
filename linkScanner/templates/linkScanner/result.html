@@ -10,11 +10,6 @@
         margin: 0;
     }
 </style>
-<section id="another-section">
-    <div class="content">
-        <h2 id="display-result"></h2><br>
-    </div>
-</section>
 
 {% if result == 'Good' %}
 <style>
@@ -26,13 +21,13 @@
         box-shadow: 0 0 20px 5px rgb(46 131 38 / 60%);
     }
 </style>
-<script>
-    document.getElementById('display-result').innerHTML = "Safe Site to use"
-</script>
 
-<!-- <h1>You are being redirected...</h1>
-    <p>If you are not redirected in a few seconds, <a href="{{ target_url }}">click here</a>.</p> -->
-    
+<section id="another-section">
+    <div class="content">
+        <h2 id="display-result">Safe site to use</h2>
+        <p><a href="{{ target_url }}">click here</a> to proceed</p>
+    </div>
+</section>
 
 {% else %}
 <style>
@@ -44,8 +39,12 @@
         box-shadow: 0 0 20px 5px rgb(255 0 0 / 60%);
     }
 </style>
-<script>
-    document.getElementById('display-result').innerHTML = "Unsafe Site to use"
-</script>
+
+<section id="another-section">
+    <div class="content">
+        <h2 id="display-result">Unsafe site to use</h2>
+    </div>
+</section>
+
 {% endif %}
 {% endblock body %}

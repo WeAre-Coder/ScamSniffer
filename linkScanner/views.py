@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render
 from .models import Link
 from .forms import LinkForm
 from linkScanner import scanner
@@ -12,10 +12,7 @@ def home(request):
         status = request.POST.get('status',result)
         link = Link(link=link, status=status) #creating link object so that it gets saved in the database
         link.save()
-        # if result == 'Good':
         target_url = request.POST.get('link')   
-        #     return HttpResponseRedirect(target_url)
-        # return render(request, 'linkScanner/result.html', {'target_url': target_url})
         return render(request,'linkScanner/result.html',{'result':result, 'target_url': target_url})
     return render(request,'linkScanner/index.html',{'link_list':link_list})
 
