@@ -20,6 +20,25 @@ def learn(request):
     return render(request, 'linkScanner/learn.html')
 
 def report(request):
+    if request.method == 'POST':
+        reportLink = request.POST.get('reportLink', '')
+        level = request.POST.get('level','')
+        result = scanner.check(str(reportLink))
+        status = request.POST.get('status',result)
+        target_url = request.POST.get('reportLink') 
+        if result == "Good":
+            if level == "Under Review":
+                pass
+            elif level == "99% Suspicious" or level == "Sadly, the Victim": #retraining
+                return render(request, 'linkScanner/result.html',{'result': "Thank you!"})
+
+        else:
+            link_list = Link.objects.all()
+            print(link_list)
+            link = Link(link=reportLink, status=status)
+            link.save()
+        return render(request, 'linkScanner/result.html',{'result':result, 'target_url': target_url})
+    
     return render(request, 'linkScanner/report.html')
 
 def contact(request):

@@ -70,11 +70,12 @@
       <form class="p-3 shadow rounded-form" method="POST" style="background-color: #3bb2c03d ; ">
           {% csrf_token %}
           <div class="form-group">
-            <form>
+            <form action="/result.html" method="post">
+              {% csrf_token %}
               <div class="row mb-3">
-                <label for="link" class="col-sm-2 col-form-label">Link</label>
+                <label for="reportLink" class="col-sm-2 col-form-label">Link</label>
                 <div class="col-sm-10">
-                  <input type="link" class="form-control" id="link" placeholder="Enter your untrusty link">
+                  <input type="link" class="form-control" id="reportLink" name="reportLink" placeholder="Enter your untrusty link">
                 </div>
               </div>
               <div class="row mb-3">
@@ -87,19 +88,19 @@
                 <legend class="col-form-label col-sm-2 pt-0">Level</legend>
                 <div class="col-sm-10" style="font-weight: bold;">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="level" id="gridRadios1" value="Under Review" checked>
                     <label class="form-check-label" for="gridRadios1">
                       Under Review 
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="level" id="gridRadios2" value="99% Suspicious">
                     <label class="form-check-label" for="gridRadios2">
                       99% Suspicious
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <input class="form-check-input" type="radio" name="level" id="gridRadios3" value="Sadly, the Victim">
                     <label class="form-check-label" for="gridRadios3">
                       Sadly, the Victim
                     </label>
@@ -116,7 +117,7 @@
                   </div>
                 </div>
               </div>
-              <center><button type="submit" class="btn btn-primary" id="let-me-know-button">Let me Know</button></center>
+                <center><button type="submit" class="btn btn-primary" id="let-me-know-button">Let me Know</button></center>
             </form>
               
           </div>

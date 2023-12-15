@@ -28,6 +28,22 @@
         <p><a href="{{ target_url }}">click here</a> to proceed</p>
     </div>
 </section>
+{% elif result == "Thank you!" %}
+<style>
+    .content {
+        background-color: #00ff0061;
+    }
+
+    .content:hover {
+        box-shadow: 0 0 20px 5px rgb(46 131 38 / 60%);
+    }
+</style>
+
+<section id="another-section">
+    <div class="content">
+        <h2 id="display-result">Thank you for your feedback</h2>
+    </div>
+</section>
 
 {% else %}
 <style>
