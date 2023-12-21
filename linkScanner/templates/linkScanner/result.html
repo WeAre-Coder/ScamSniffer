@@ -2,7 +2,7 @@
 {% block body %}
 <style>
     body {
-        background-image: url('/static/linkScanner/a1.png');
+        background-image: url('/static/linkScanner/green.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -14,22 +14,46 @@
 {% if result == 'Good' %}
 <style>
     .content {
-        background-color: #00ff0061;
+        background-color: #3bb2c03d;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
     }
 
     .content:hover {
-        box-shadow: 0 0 20px 5px rgb(46 131 38 / 60%);
+        box-shadow: 0 0 20px 5px rgba(5, 181, 181, 0.6);
+    }
+    #display-result {
+        color: #00ff00; /* Bright Green */
+        margin-bottom: 20px;
+    }
+    .proceed-button {
+        
+        padding: 12px 24px;
+        font-family: 'Spartan', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #00ff007d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none; /* Added for link appearance */
+    }
+
+    .proceed-button:hover {
+        background-color: #2BFF05;
     }
 </style>
 
 <section id="another-section">
     <div class="content">
         <h2 id="display-result">Safe site to use</h2>
-        <p><a href="{{ target_url }}">click here</a> to proceed</p>
+        <p><a id="proceed-button" class="proceed-button" href="{{ target_url }}">Click here to proceed</a></p>
     </div>
 </section>
 {% elif result == "Thank you!" %}
 <style>
+    
     .content {
         background-color: #00ff0061;
     }
@@ -47,18 +71,32 @@
 
 {% else %}
 <style>
+    body {
+        background-image: url('/static/linkScanner/red.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+    }
     .content {
-        background-color: #f7373778;
+        background-color: #3bb2c03d;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
     }
 
     .content:hover {
-        box-shadow: 0 0 20px 5px rgb(255 0 0 / 60%);
+        box-shadow: 0 0 20px 5px rgba(5, 181, 181, 0.6);
     }
+    #display-result1 {
+        color: #FF051F; 
+        
+    }
+
 </style>
 
 <section id="another-section">
     <div class="content">
-        <h2 id="display-result">Unsafe site to use</h2>
+        <h2 id="display-result1">Unsafe site to use</h2>
     </div>
 </section>
 
