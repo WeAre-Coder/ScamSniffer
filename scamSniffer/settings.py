@@ -75,10 +75,14 @@ WSGI_APPLICATION = 'scamSniffer.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'scamsniffer',
+       'USER': 'root',
+       'PASSWORD': 'GsP5VMAKqt1Cq5HX03M0ZYK57Bx0mvpI',
+       'HOST': 'dpg-cm8qh4nqd2ns73dick7g-a.oregon-postgres.render.com',
+       'PORT': '5432',
+   }
 }
 
 
